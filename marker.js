@@ -8,7 +8,7 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
 
 // 마커를 생성합니다
 var marker = new kakao.maps.Marker({
-    position: position,
+    position: markPosition,
     clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
     image: markerImage // 마커이미지 설정 
 });
