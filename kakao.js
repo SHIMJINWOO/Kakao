@@ -17,46 +17,49 @@ map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 var zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-// 지도에 추가된 지도타입정보를 가지고 있을 변수입니다
-var currentTypeId;
+// 지도 타입 정보를 가지고 있을 객체입니다
+// map.addOverlayMapTypeId 함수로 추가된 지도 타입은
+// 가장 나중에 추가된 지도 타입이 가장 앞에 표시됩니다
+// 이 예제에서는 지도 타입을 추가할 때 지적편집도, 지형정보, 교통정보, 자전거도로 정보 순으로 추가하므로
+// 자전거 도로 정보가 가장 앞에 표시됩니다
+var mapTypes = {
+    terrain : kakao.maps.MapTypeId.TERRAIN,    
+    traffic :  kakao.maps.MapTypeId.TRAFFIC,
+    bicycle : kakao.maps.MapTypeId.BICYCLE,
+    useDistrict : kakao.maps.MapTypeId.USE_DISTRICT
+};
 
-// 버튼이 클릭되면 호출되는 함수입니다
-function setOverlayMapTypeId(maptype) {
-    var changeMaptype;
+// 체크 박스를 선택하면 호출되는 함수입니다
+function setOverlayMapTypeId() {
+    var chkTerrain = document.getElementById('chkTerrain'),  
+        chkTraffic = document.getElementById('chkTraffic'),
+        chkBicycle = document.getElementById('chkBicycle'),
+        chkUseDistrict = document.getElementById('chkUseDistrict');
     
-    // maptype에 따라 지도에 추가할 지도타입을 결정합니다
-    if (maptype === 'traffic') {            
-        
-        // 교통정보 지도타입
-        changeMaptype = kakao.maps.MapTypeId.TRAFFIC;     
-        
-    } else if (maptype === 'roadview') {        
-        
-        // 로드뷰 도로정보 지도타입
-        changeMaptype = kakao.maps.MapTypeId.ROADVIEW;    
+    // 지도 타입을 제거합니다
+    for (var type in mapTypes) {
+        map.removeOverlayMapTypeId(mapTypes[type]);    
+    }
 
-    } else if (maptype === 'terrain') {
-        
-        // 지형정보 지도타입
-        changeMaptype = kakao.maps.MapTypeId.TERRAIN;    
-
-    } else if (maptype === 'use_district') {
-        
-        // 지적편집도 지도타입
-        changeMaptype = kakao.maps.MapTypeId.USE_DISTRICT;           
+    // 지적편집도정보 체크박스가 체크되어있으면 지도에 지적편집도정보 지도타입을 추가합니다
+    if (chkUseDistrict.checked) {
+        map.addOverlayMapTypeId(mapTypes.useDistrict);    
     }
     
-    // 이미 등록된 지도 타입이 있으면 제거합니다
-    if (currentTypeId) {
-        map.removeOverlayMapTypeId(currentTypeId);    
+    // 지형정보 체크박스가 체크되어있으면 지도에 지형정보 지도타입을 추가합니다
+    if (chkTerrain.checked) {
+        map.addOverlayMapTypeId(mapTypes.terrain);    
     }
     
-    // maptype에 해당하는 지도타입을 지도에 추가합니다
-    map.addOverlayMapTypeId(changeMaptype);
+    // 교통정보 체크박스가 체크되어있으면 지도에 교통정보 지도타입을 추가합니다
+    if (chkTraffic.checked) {
+        map.addOverlayMapTypeId(mapTypes.traffic);    
+    }
     
-    // 지도에 추가된 타입정보를 갱신합니다
-    currentTypeId = changeMaptype;        
-}
-
-
+    // 자전거도로정보 체크박스가 체크되어있으면 지도에 자전거도로정보 지도타입을 추가합니다
+    if (chkBicycle.checked) {
+        map.addOverlayMapTypeId(mapTypes.bicycle);    
+    }
+    
+}  
 
