@@ -17,43 +17,43 @@ map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 var zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
+// 지도에 추가된 지도타입정보를 가지고 있을 변수입니다
+var currentTypeId;
 
-// 마커를 표시할 위치와 title 객체 배열입니다 
-var positions = [
-    {
-        title: '카카오', 
-        latlng: new kakao.maps.LatLng(33.450705, 126.570677)
-    },
-    {
-        title: '생태연못', 
-        latlng: new kakao.maps.LatLng(33.450936, 126.569477)
-    },
-    {
-        title: '텃밭', 
-        latlng: new kakao.maps.LatLng(33.450879, 126.569940)
-    },
-    {
-        title: '근린공원',
-        latlng: new kakao.maps.LatLng(33.451393, 126.570738)
+// 버튼이 클릭되면 호출되는 함수입니다
+function setOverlayMapTypeId(maptype) {
+    var changeMaptype;
+    
+    // maptype에 따라 지도에 추가할 지도타입을 결정합니다
+    if (maptype === 'traffic') {            
+        
+        // 교통정보 지도타입
+        changeMaptype = kakao.maps.MapTypeId.TRAFFIC;     
+        
+    } else if (maptype === 'roadview') {        
+        
+        // 로드뷰 도로정보 지도타입
+        changeMaptype = kakao.maps.MapTypeId.ROADVIEW;    
+
+    } else if (maptype === 'terrain') {
+        
+        // 지형정보 지도타입
+        changeMaptype = kakao.maps.MapTypeId.TERRAIN;    
+
+    } else if (maptype === 'use_district') {
+        
+        // 지적편집도 지도타입
+        changeMaptype = kakao.maps.MapTypeId.USE_DISTRICT;           
     }
-];
-
-// 마커 이미지의 이미지 주소입니다
-var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
     
-for (var i = 0; i < positions.length; i ++) {
+    // 이미 등록된 지도 타입이 있으면 제거합니다
+    if (currentTypeId) {
+        map.removeOverlayMapTypeId(currentTypeId);    
+    }
     
-    // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(24, 35); 
+    // maptype에 해당하는 지도타입을 지도에 추가합니다
+    map.addOverlayMapTypeId(changeMaptype);
     
-    // 마커 이미지를 생성합니다    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        position: positions[i].latlng, // 마커를 표시할 위치
-        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-        image : markerImage // 마커 이미지 
-    });
+    // 지도에 추가된 타입정보를 갱신합니다
+    currentTypeId = changeMaptype;        
 }
