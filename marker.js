@@ -1,9 +1,3 @@
-
-
-
-// 마커를 표시할 위치입니다 
-var position =  new kakao.maps.LatLng(37.54699, 127.09598);
-
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 var positions = [
     {
@@ -24,29 +18,12 @@ var positions = [
     }
 ];
 
-// 마커 이미지의 이미지 주소입니다
-var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-    
 for (var i = 0; i < positions.length; i ++) {
-    
-    // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(24, 35); 
-    
-    // 마커 이미지를 생성합니다    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position: positions[i].latlng, // 마커를 표시할 위치
-        image : markerImage // 마커 이미지 
+        position: positions[i].latlng // 마커의 위치
     });
-}
-
-
-// 마커를 지도에 표시합니다.
-marker.setMap(map);
-
 
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
