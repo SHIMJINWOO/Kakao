@@ -5,13 +5,6 @@
         minLevel: 10 // 클러스터 할 최소 지도 레벨 
     });
  
-   var data = {
-  "positions": [
-    {
-      "content": '<div>본사 <p> ㅌㅌ</div>', 
-      "lat": 37.27943075229118,
-      "lng": 127.01763998406159
-};
 
 var markers = data.positions.map(function(position) {
     return new kakao.maps.Marker({
