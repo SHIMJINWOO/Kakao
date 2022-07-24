@@ -135,7 +135,7 @@ var positions = [
 {content: '<div>본사 <p> ㅌㅌ</div>',latlng: new kakao.maps.LatLng(37.62293367990081,126.834450051224},
 {content: '<div>본사 <p> ㅌㅌ</div>',latlng: new kakao.maps.LatLng(35.5272027005698,127.729537989501},
 {content: '<div>본사 <p> ㅌㅌ</div>',latlng: new kakao.maps.LatLng(35.180032285898854,128.069545091753}
-  ]}
+  ];
 /*
 var positions = [
     {
