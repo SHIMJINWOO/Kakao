@@ -6,7 +6,7 @@ var clusterer = new kakao.maps.MarkerClusterer({
     averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
     minLevel: 10 // 클러스터 할 최소 지도 레벨 
 });
-
+/*
 var positions = 
     [
     {      content: '<div>본사 <p> ㅌㅌ</div>',       latlng: new kakao.maps.LatLng(37.54699,127.09598    },
@@ -136,7 +136,25 @@ var positions =
     {      latlng: new kakao.maps.LatLng(35.5272027005698,127.729537989501    },
     {      latlng: new kakao.maps.LatLng(35.180032285898854,128.069545091753    }
   ]}
-
+*/
+var positions = [
+    {
+        content: '<div>카카오</div>', 
+        latlng: new kakao.maps.LatLng(33.450705, 126.570677)
+    },
+    {
+        content: '<div>생태연못</div>', 
+        latlng: new kakao.maps.LatLng(33.450936, 126.569477)
+    },
+    {
+        content: '<div>텃밭</div>', 
+        latlng: new kakao.maps.LatLng(33.450879, 126.569940)
+    },
+    {
+        content: '<div>근린공원</div>',
+        latlng: new kakao.maps.LatLng(33.451393, 126.570738)
+    }
+];
 var imageSrc = 'https://www.pngmart.com/files/7/Delivery-PNG-Picture.png', // 마커이미지의 주소입니다    
     imageSize = new kakao.maps.Size(30, 33), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
