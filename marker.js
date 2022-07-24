@@ -180,12 +180,12 @@ function makeOutListener(infowindow) {
     };
 }
 
-
+for (var i = 0; i < positions.length; i ++) {
     var markers = positions.map(function(position) {
     return new kakao.maps.Marker({
-        position : positions.latlng
+        position : positions[i].latlng
     });
 });
-
+    });
         // 클러스터러에 마커들을 추가합니다
         clusterer.addMarkers(markers);
