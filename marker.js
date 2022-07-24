@@ -15,6 +15,7 @@ var data = {
       "lng": 127.09598
     },
     {
+      "content": '<div>본사 <p> ㅌㅌ</div>', 
       "lat": 37.55915668706214,
       "lng": 126.92536526611102
     },
@@ -564,7 +565,7 @@ var positions = [
         latlng: new kakao.maps.LatLng(33.451393, 126.570738)
     }
 ];
-       */ 
+
 
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
@@ -592,4 +593,4 @@ function makeOutListener(infowindow) {
     };
 }
 
-
+       */ 
