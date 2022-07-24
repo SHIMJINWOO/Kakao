@@ -180,9 +180,16 @@ function makeOutListener(infowindow) {
     };
 }
 
-// 클러스터러에 마커들을 추가합니다
-clusterer.addMarkers(marker);
 
+    var markers = positions.map(function(position) {
+    return new kakao.maps.Marker({
+        position : new kakao.maps.LatLng(position.lat, position.lng)
+    });
+});
+
+        // 클러스터러에 마커들을 추가합니다
+        clusterer.addMarkers(markers);
+    });
 
 
 
