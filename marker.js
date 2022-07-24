@@ -185,7 +185,7 @@ for (var i = 0; i < positions.length; i ++) {
     return new kakao.maps.Marker({
         position : positions[i].latlng
     });
-};
+});
     }
         // 클러스터러에 마커들을 추가합니다
         clusterer.addMarkers(markers);
