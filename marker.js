@@ -9,7 +9,6 @@ var clusterer = new kakao.maps.MarkerClusterer({
 
 
 var positions = [
-{content: '<div>본사 <p> ㅌㅌ</div>',latlng: new kakao.maps.LatLng(37.54699,127.09598    },
 {content: '<div>본사 <p> ㅌㅌ</div>',latlng: new kakao.maps.LatLng(37.55915668706214,126.925365266111},
 {content: '<div>본사 <p> ㅌㅌ</div>',latlng: new kakao.maps.LatLng(35.13854258261161,129.101478129467},
 {content: '<div>본사 <p> ㅌㅌ</div>',latlng: new kakao.maps.LatLng(37.55518388656961,126.929262377425},
