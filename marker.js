@@ -8,9 +8,6 @@
 
 
 
-// 클러스터러에 마커들을 추가합니다
-clusterer.addMarkers(markers);
-
 
 
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
@@ -47,8 +44,11 @@ for (var i = 0; i < positions.length; i ++) {
         position: positions[i].latlng, // 마커의 위치
         image: markerImage // 마커이미지 설정
     });
+   
     
-    
+
+// 클러스터러에 마커들을 추가합니다
+clusterer.addMarkers(markers);
     
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
