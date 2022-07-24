@@ -6,12 +6,7 @@
     });
  
 
-var markers = data.positions.map(function(position) {
-    return new kakao.maps.Marker({
-        position : new kakao.maps.LatLng(position.lat, position.lng),
-                image: markerImage // 마커이미지 설정
-    });
-});
+
 
 // 클러스터러에 마커들을 추가합니다
 clusterer.addMarkers(markers);
@@ -53,7 +48,8 @@ for (var i = 0; i < positions.length; i ++) {
         image: markerImage // 마커이미지 설정
     });
     
-
+    
+    
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
         content: positions[i].content // 인포윈도우에 표시할 내용
