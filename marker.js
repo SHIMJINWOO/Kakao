@@ -524,6 +524,16 @@ var imageSrc = 'https://www.pngmart.com/files/7/Delivery-PNG-Picture.png', // �
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
 
+
+for (var i = 0; i < positions.length; i ++) {
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: (positions[i].lat, positions[i].lng), // 마커의 위치
+        image: markerImage // 마커이미지 설정
+    });
+    
+    /*
 var markers = data.positions.map(function(position) {
     return new kakao.maps.Marker({
     position : new kakao.maps.LatLng(position.lat, position.lng),
@@ -548,7 +558,7 @@ var markers = data.positions.map(function(position) {
         });
     })(marker, infowindow);
 }
-
+*/
 
 // 클러스터러에 마커들을 추가합니다
 clusterer.addMarkers(markers);
