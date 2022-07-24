@@ -7,8 +7,8 @@ var clusterer = new kakao.maps.MarkerClusterer({
     minLevel: 10 // 클러스터 할 최소 지도 레벨 
 });
 
-var data = {
-  "positions":[
+var positions = 
+    [
     {      content: '<div>본사 <p> ㅌㅌ</div>',       latlng: new kakao.maps.LatLng(37.54699,127.09598    },
     {      content: '<div>본사 <p> ㅌㅌ</div>',       latlng: new kakao.maps.LatLng(37.55915668706214,126.925365266111    },
     {      latlng: new kakao.maps.LatLng(35.13854258261161,129.101478129467    },
