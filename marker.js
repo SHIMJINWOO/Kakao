@@ -183,7 +183,7 @@ function makeOutListener(infowindow) {
 
     var markers = positions.map(function(position) {
     return new kakao.maps.Marker({
-        position : new kakao.maps.LatLng(position.lat, position.lng)
+        position : positions.latlng
     });
 });
 
