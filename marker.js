@@ -156,7 +156,7 @@ var markers = data.positions.map(function(position) {
 
 
 
-
+/*
 
     // 마커에 표시할 인포윈도우를 생성합니다 
     for (var i=0; i<data.positions.length; i++){
@@ -187,7 +187,7 @@ function makeOutListener(infowindow) {
     };
 }
 
-
+*/
 
 
 
