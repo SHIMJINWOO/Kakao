@@ -157,21 +157,6 @@ var markers = data.positions.map(function(position) {
     });
 });
 
-for (var i=0; i<data.positions.length; i++){
-const iwContent = data.positions[i].content
-const iwPosition = new kakao.maps.LatLng(`${data.positions[i].lat}`,`${data.positions[i].lng}`)
-// 인포윈도우를 생성합니다
-var infowindow = new kakao.maps.InfoWindow({
-    position : iwPosition, 
-    content : iwContent 
-});
-infowindow.open(map, iwPosition); 
-}
-  
-// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-
-
-
 
 // 클러스터러에 마커들을 추가합니다
  clusterer.addMarkers(markers);
