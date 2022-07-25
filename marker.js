@@ -156,35 +156,19 @@ var markers = data.positions.map(function(position) {
 });
 
 
-/*
-for (var i = 0; i < data.positions.length; i ++) {
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        position : `(`+data.positions[i].lat+`,`+data.positions[i].lng+`)`// 마커의 위치
-    });
+var iwContent = '<div style="padding:5px;">Hello World! <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    iwPosition = new kakao.maps.LatLng(position.lat, position.lng); //인포윈도우 표시 위치입니다
 
-    // 마커에 표시할 인포윈도우를 생성합니다 
-    var infowindow = new kakao.maps.InfoWindow({
-        content: data.positions[i].content // 인포윈도우에 표시할 내용
-    });
+// 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({
+    position : iwPosition, 
+    content : iwContent 
+});
+  
+// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+infowindow.open(map, markers); 
 
-    // 마커에 이벤트를 등록하는 함수 만들고 즉시 호출하여 클로저를 만듭니다
-    // 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-    (function(marker, infowindow) {
-        // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다 
-        kakao.maps.event.addListener(marker, 'mouseover', function() {
-            infowindow.open(map, marker);
-        });
 
-        // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
-        kakao.maps.event.addListener(marker, 'mouseout', function() {
-            infowindow.close();
-        });
-    })(marker, infowindow);
-}
-
-*/
 
 // 클러스터러에 마커들을 추가합니다
  clusterer.addMarkers(markers);
