@@ -141,7 +141,9 @@ var data = {"positions":
 
 
   
-var imageSrc = 'MicrosoftTeams-image (8).png', // 마커이미지의 주소입니다    
+for (var i = 0; i < data.positions.length; i ++) {
+ 
+ var imageSrc = 'MicrosoftTeams-image (8).png', // 마커이미지의 주소입니다    
     imageSize = new kakao.maps.Size(30, 33), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
@@ -154,15 +156,6 @@ var markers = data.positions.map(function(position) {
     image : markerImage
     });
 });
-
-
-/*
-for (var i = 0; i < data.positions.length; i ++) {
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        position : `(`+data.positions[i].lat+`,`+data.positions[i].lng+`)`// 마커의 위치
-    });
 
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
@@ -184,7 +177,7 @@ for (var i = 0; i < data.positions.length; i ++) {
     })(marker, infowindow);
 }
 
-*/
+
 
 // 클러스터러에 마커들을 추가합니다
  clusterer.addMarkers(markers);
