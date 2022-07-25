@@ -148,6 +148,8 @@ var imageSrc = 'MicrosoftTeams-image (8).png', // 마커이미지의 주소입�
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
 
+
+
 var markers = data.positions.map(function(position) {
     return new kakao.maps.Marker({
     position : new kakao.maps.LatLng(position.lat, position.lng),
@@ -165,7 +167,7 @@ var infowindow = new kakao.maps.InfoWindow({
 });}
   
 // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-infowindow.open(map, markers); 
+infowindow.open(map, iwPosition); 
 
 
 
