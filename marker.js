@@ -150,12 +150,13 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
 
 var markers = data.positions.map(function(position) {
     return new kakao.maps.Marker({
-    position : new kakao.maps.LatLng(position.lat, position.lng)
+    position : new kakao.maps.LatLng(position.lat, position.lng),
+    image : markerImage;
     });
 });
 
 
-
+/*
 for (var i = 0; i < data.positions.length; i ++) {
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
@@ -183,7 +184,7 @@ for (var i = 0; i < data.positions.length; i ++) {
     })(marker, infowindow);
 }
 
-
+*/
 
 // 클러스터러에 마커들을 추가합니다
  clusterer.addMarkers(markers);
