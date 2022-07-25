@@ -160,7 +160,7 @@ for (var i = 0; i < data.positions.length; i ++) {
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position : (position.lat, position.lng) // 마커의 위치
+        position : `(`+data.positions[i].lat+`,`+data.positions[i].lng+`)`// 마커의 위치
     });
 
     // 마커에 표시할 인포윈도우를 생성합니다 
