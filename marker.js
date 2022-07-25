@@ -166,13 +166,13 @@ var infowindow = new kakao.maps.InfoWindow({
 });
 
 // 마커에 마우스오버 이벤트를 등록합니다
-kakao.maps.event.addListener(marker, 'mouseover', function() {
+kakao.maps.event.addListener(markers, 'mouseover', function() {
   // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
-    infowindow.open(map, marker);
+    infowindow.open(map, markers);
 });
 
 // 마커에 마우스아웃 이벤트를 등록합니다
-kakao.maps.event.addListener(marker, 'mouseout', function() {
+kakao.maps.event.addListener(markers, 'mouseout', function() {
     // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
     infowindow.close();
 });
