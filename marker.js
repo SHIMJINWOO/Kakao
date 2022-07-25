@@ -155,7 +155,7 @@ var markers = data.positions.map(function(position) {
 });
 
 
-
+/*
 
 for (var i = 0; i < positions.length; i ++) {
     // 마커를 생성합니다
@@ -178,6 +178,7 @@ for (var i = 0; i < positions.length; i ++) {
 
 
 
+
 // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
 function makeOverListener(map, marker, infowindow) {
     return function() {
@@ -192,7 +193,7 @@ function makeOutListener(infowindow) {
     };
 }
 
-
+*/
 
 
 
