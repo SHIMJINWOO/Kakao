@@ -153,7 +153,7 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
 var markers = data.positions.map(function(position) {
     return new kakao.maps.Marker({
     position : new kakao.maps.LatLng(position.lat, position.lng),
-    image : makerImage
+    image : markerImage
     });
 });
 
