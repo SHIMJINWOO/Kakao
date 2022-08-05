@@ -1,4 +1,4 @@
-
+/*
 
 // 마커 클러스터러를 생성합니다 
 var clusterer = new kakao.maps.MarkerClusterer({
@@ -522,3 +522,4 @@ var markers = data.positions.map(function(position) {
 
 // 클러스터러에 마커들을 추가합니다
  clusterer.addMarkers(markers);
+*/
