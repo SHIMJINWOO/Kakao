@@ -1,4 +1,13 @@
 
+// 마커 클러스터러를 생성합니다 
+var clusterer = new kakao.maps.MarkerClusterer({
+    map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+    averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+    minLevel: 10 // 클러스터 할 최소 지도 레벨 
+});
+
+
+
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 var positions = [
 {content: '<div>스파이더본사<p>기사:1명</div>',latlng: new kakao.maps.LatLng(37.5094419,127.0420903)},
@@ -539,3 +548,4 @@ function makeOutListener(infowindow) {
     };
 }
 
+ clusterer.addMarkers(markers);
